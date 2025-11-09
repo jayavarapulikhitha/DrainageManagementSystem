@@ -1,0 +1,42 @@
+/* --- LEAFLET GLOBAL STYLES (SINGLE, DEFINITIVE BLOCK) --- */
+
+/* 1. Import Leaflet's core styles (Only include this line ONCE) */
+@import '~leaflet/dist/leaflet.css';
+
+/* 2. CRITICAL FIXES for alignment and full-space rendering */
+.leaflet-container {
+    /* Ensures the map is rendered with the correct box model, fixing alignment issues */
+    box-sizing: content-box; 
+    
+    /* Z-index is important to prevent map controls from being hidden */
+    z-index: 0; 
+    
+    /* Forces the map to fill its container and prevents background artifacts */
+    width: 100%;
+    height: 100%;
+    background: #f8f8f8; 
+}
+
+/* 3. Fixes a common Leaflet bug where icons/markers are offset */
+.leaflet-container a {
+    display: inline; /* Prevents external CSS from breaking Leaflet's internal sizing */
+}
+
+/* 4. Prevents map tiles (images) and internal images (markers) from stretching */
+.leaflet-container img {
+    max-width: none !important;
+}
+
+/* 5. Custom Icon Styles (Ensures pins look clean) */
+.custom-div-icon, .new-pin-icon {
+    background: none !important; 
+    border: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 6. Adjust attribution text size */
+.leaflet-control-attribution {
+    font-size: 0.7em !important;
+}

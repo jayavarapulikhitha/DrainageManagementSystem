@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* --- LEAFLET ALIGNMENT FIXES --- */
+
+/* 1. Ensure the map tiles load smoothly and correctly scale */
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+    /* Fixes a common alignment issue causing map jumpiness */
+    box-sizing: content-box; 
+}
+
+/* 2. Fixes a crucial Leaflet bug where icons and markers appear in the wrong place */
+.leaflet-container a {
+    /* Prevents external CSS from conflicting with Leaflet marker icons */
+    display: inline;
+}
+
+/* 3. Ensures images/markers inside the map don't stretch or break alignment */
+.leaflet-container img {
+    max-width: none;
+}
